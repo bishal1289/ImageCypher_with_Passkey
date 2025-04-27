@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImageCypher - Secure Image Encryption</title>
+  <meta name="description" content="A secure image encryption and decryption tool" />
+  <meta name="author" content="ImageCypher" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>🔒 ImageCypher</h1>
+      <p class="subtitle">Secure Image Encryption</p>
+    </header>
+
+    <main>
+      <!-- Encrypt Form -->
+      <section class="encrypt-section">
+        <h2>Encrypt Image</h2>
+        <form id="encryptForm" action="/encrypt" method="POST" enctype="multipart/form-data">
+          <div class="card">
+            <div id="encryptDrop" class="dropzone">
+              <div class="dropzone-content">
+                <img src="upload-icon.svg" alt="Upload" class="upload-icon">
+                <p>Drag & drop your image here</p>
+                <p class="or-text">- OR -</p>
+                <label for="encryptInput" class="custom-file-input">Choose File</label>
+                <input type="file" name="image" id="encryptInput" accept="image/*" class="hidden-input" required>
+              </div>
+              <div id="encrypt-preview" class="image-preview"></div>
+            </div>
+            <div class="input-group">
+              <label for="encryptPasskey">Enter Passkey:</label>
+              <input type="text" name="passkey" id="encryptPasskey" placeholder="Enter a passkey" required>
+            </div>
+            <button type="submit" id="encryptBtn" class="action-button" disabled>Encrypt</button>
+          </div>
+          <div id="encryptResult" class="result-container"></div>
+        </form>
+      </section>
+
+      <!-- Decrypt Form -->
+      <section class="decrypt-section">
+        <h2>Decrypt Image</h2>
+        <form id="decryptForm" action="/decrypt" method="POST" enctype="multipart/form-data">
+          <div class="card">
+            <div id="decryptDrop" class="dropzone">
+              <div class="dropzone-content">
+                <img src="upload-icon.svg" alt="Upload" class="upload-icon">
+                <p>Drop encrypted image</p>
+                <label for="decryptInput" class="custom-file-input">Choose File</label>
+                <input type="file" name="image" id="decryptInput" accept="image/*" class="hidden-input" required>
+              </div>
+              <div id="decrypt-preview" class="image-preview"></div>
+            </div>
+            <div class="input-group">
+              <label for="decryptPasskey">Enter Passkey:</label>
+              <input type="text" name="passkey" id="decryptPasskey" placeholder="Enter the passkey" required>
+            </div>
+            <button type="submit" id="decryptBtn" class="action-button" disabled>Decrypt</button>
+          </div>
+          <div id="decryptResult" class="result-container"></div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 ImageCypher - Secure your images with confidence</p>
+    </footer>
+  </div>
+
+  <!-- Icons SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="upload-icon" viewBox="0 0 24 24">
+      <path d="M12 4V16M12 4L8 8M12 4L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3 18V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <!-- Script Files -->
+  <script>
+    // Enable Encrypt Button Only When Both Image and Passkey Are Provided
+    const encryptInput = document.getElementById("encryptInput");
+    const encryptPasskey = document.getElementById("encryptPasskey");
+    const encryptBtn = document.getElementById("encryptBtn");
+
+    function validateEncryptForm() {
+      encryptBtn.disabled = !(encryptInput.files.length > 0 && encryptPasskey.value.trim() !== "");
+    }
+
+    encryptInput.addEventListener("change", validateEncryptForm);
+    encryptPasskey.addEventListener("input", validateEncryptForm);
+
+    // Enable Decrypt Button Only When Both Image and Passkey Are Provided
+    const decryptInput = document.getElementById("decryptInput");
+    const decryptPasskey = document.getElementById("decryptPasskey");
+    const decryptBtn = document.getElementById("decryptBtn");
+
+    function validateDecryptForm() {
+      decryptBtn.disabled = !(decryptInput.files.length > 0 && decryptPasskey.value.trim() !== "");
+    }
+
+    decryptInput.addEventListener("change", validateDecryptForm);
+    decryptPasskey.addEventListener("input", validateDecryptForm);
+  </script>
+</body>
+</html>
