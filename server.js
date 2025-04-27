@@ -113,7 +113,8 @@ app.post("/decrypt", upload.single("image"), async (req, res) => {
     // Verify the passkey hash
     const providedHash = generateHash(passkey);
     if (providedHash !== passkeyHash) {
-      throw new Error("Invalid passkey provided.");
+      // Send an error response if the passkey is invalid
+      return res.status(400).json({ error: "Invalid passkey provided." });
     }
 
     // Apply XOR decryption (same as encryption)
@@ -130,7 +131,13 @@ app.post("/decrypt", upload.single("image"), async (req, res) => {
     });
   } catch (err) {
     console.error("Error during decryption:", err.message);
-    res.status(500).json({ error: err.message });
+
+    // Clean up the uploaded file in case of an error
+    if (fs.existsSync(uploadedPath)) {
+      fs.unlinkSync(uploadedPath);
+    }
+
+    res.status(500).json({ error: "An error occurred during decryption." });
   }
 });
 
