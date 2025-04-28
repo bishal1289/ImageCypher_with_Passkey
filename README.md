@@ -96,15 +96,15 @@ ImageCypher is a Node.js-based application that allows users to securely encrypt
 
 3. Routes:
  - GET /:
-  - Serves the homepage with encryption and decryption forms.
+   - Serves the homepage with encryption and decryption forms.
  - POST /encrypt:
-  - Handles image encryption.
-  - Combines the passkey hash and encrypted data into a single file.
-  - Sends the encrypted file as a .zip download.
+   - Handles image encryption.
+   - Combines the passkey hash and encrypted data into a single file.
+   - Sends the encrypted file as a .zip download.
  - POST /decrypt:
-  - Handles image decryption.
-  - Verifies the passkey hash before decrypting the image.
-  - Sends the decrypted image as a download.
+   - Handles image decryption.
+   - Verifies the passkey hash before decrypting the image.
+   - Sends the decrypted image as a download.
 
 # Security Considerations
  - XOR Encryption:
