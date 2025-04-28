@@ -127,4 +127,5 @@ ImageCypher is a Node.js-based application that allows users to securely encrypt
 Contributions are welcome! Feel free to open issues or submit pull requests to improve the project.
 
 # Snapshot
-![Uploading Screenshot (165).png…]()
+
+![Screenshot (165)](https://github.com/user-attachments/assets/5f74c273-e066-459b-8378-d32d7de4d991)
