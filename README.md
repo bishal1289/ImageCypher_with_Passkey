@@ -56,18 +56,18 @@ ImageCypher is a Node.js-based application that allows users to securely encrypt
    ```
 # Usage
  - Encrypt an Image
-  1. Go to the Encrypt Image section on the homepage.
-  2. Upload an image file.
-  3. Enter a passkey.
-  4. Click the Encrypt button.
-  5. Download the encrypted .zip file.
+    1. Go to the Encrypt Image section on the homepage.
+    2. Upload an image file.
+    3. Enter a passkey.
+    4. Click the Encrypt button.
+    5. Download the encrypted .zip file.
      
  - Decrypt an Image
-  1. Go to the Decrypt Image section on the homepage.
-  2. Upload the encrypted image file.
-  3. Enter the same passkey used during encryption.
-  4. Click the Decrypt button.
-  5. Download the decrypted image file.
+    1. Go to the Decrypt Image section on the homepage.
+    2. Upload the encrypted image file.
+    3. Enter the same passkey used during encryption.
+    4. Click the Decrypt button.
+    5. Download the decrypted image file.
 
 # Project Structure
 ```
