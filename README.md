@@ -39,8 +39,8 @@ ImageCypher is a Node.js-based application that allows users to securely encrypt
 ## Steps
  1. Clone the repository:
     ```
-    git clone https://github.com/your-username/imagecypher.git
-    cd imagecypher
+    git clone https://github.com/bishal1289/ImageCypher_with_Passkey.git
+    cd ImageCypher_with_Passkey
     ```
 2. Install dependencies:
    ```
