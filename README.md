@@ -23,15 +23,15 @@ ImageCypher is a Node.js-based application that allows users to securely encrypt
 
 # Technologies Used
  - Backend:
-  - Node.js
-  - Express.js
-  - Multer for file uploads
-  - Crypto for hashing
-  - Adm-Zip for creating zip files
+   - Node.js
+   - Express.js
+   - Multer for file uploads
+   - Crypto for hashing
+   - Adm-Zip for creating zip files
  
  - Frontend:
-  - EJS for templating
-  - HTML, CSS, and JavaScript for the user interface
+   - EJS for templating
+   - HTML, CSS, and JavaScript for the user interface
 
 # Installation
 ## Prerequisites
