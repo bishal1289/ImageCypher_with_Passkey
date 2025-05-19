@@ -73,8 +73,6 @@ ImageCypher is a Node.js-based application that allows users to securely encrypt
 ```
  imageCypher/
 ├── public/                 # Static files (CSS, JS, images)
-│   ├── scripts/
-│   │   └── main.js         # Client-side JavaScript
 │   ├── styles/
 │   │   └── style.css       # Custom styles
 ├── uploads/                # Temporary storage for uploaded files
