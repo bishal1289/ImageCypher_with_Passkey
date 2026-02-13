@@ -122,7 +122,7 @@ ImageCypher is a Node.js-based application that allows users to securely encrypt
  - Add error handling for unsupported file types.
 
 # Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests to improve the project.
+Contributions are welcome! Feel free to open issues or submit pull requests to improve the projects.
 
 # Snapshot
 
